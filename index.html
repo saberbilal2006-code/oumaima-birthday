@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#5a1237" />
+  <title>Joyeux anniversaire Oumaima ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="hearts"></canvas>
+
+  <main>
+    <section class="hero screen active" id="screen1">
+      <div class="glow"></div>
+      <p class="eyebrow">Une petite surprise rien que pour toi</p>
+      <h1>Oumaima</h1>
+      <p class="subtitle">Aujourd’hui, le monde célèbre la naissance d’une personne vraiment spéciale.</p>
+
+      <button class="envelope" id="openGift" aria-label="Ouvrir la surprise">
+        <span class="flap"></span>
+        <span class="paper">Pour toi ❤️</span>
+        <span class="seal">❤</span>
+      </button>
+
+      <p class="hint">Appuie sur l’enveloppe</p>
+    </section>
+
+    <section class="screen" id="screen2">
+      <div class="card letter-card">
+        <div class="sparkle">✦</div>
+        <p class="small">30 juillet — une journée spéciale</p>
+        <h2>Joyeux anniversaire,<br><span>Oumaima El Farouki</span> 🎂</h2>
+        <p>
+          Je voulais t’offrir quelque chose de différent, quelque chose qui reste.
+          Pas seulement un message, mais un petit coin rempli de nos souvenirs.
+        </p>
+        <p>
+          Tu es une personne douce, précieuse et capable de rendre les journées
+          plus belles simplement par ta présence. Je te souhaite une année pleine
+          de réussite, de paix, de beaux moments et de rêves qui deviennent réalité.
+        </p>
+        <p class="signature">Avec tout mon cœur ❤️</p>
+        <button class="primary" data-next="screen3">Voir nos souvenirs</button>
+      </div>
+    </section>
+
+    <section class="screen" id="screen3">
+      <div class="section-heading">
+        <p class="eyebrow">Quelques instants que je garde précieusement</p>
+        <h2>Nos souvenirs</h2>
+      </div>
+
+      <div class="gallery">
+        <figure class="polaroid tilt-left">
+          <img src="assets/photo_1.jpg" alt="Souvenir ensemble">
+          <figcaption>Un moment simple, mais précieux 🤍</figcaption>
+        </figure>
+        <figure class="polaroid tilt-right">
+          <img src="assets/photo_2.jpg" alt="Oumaima et Bilal">
+          <figcaption>Mon regard dit déjà beaucoup ❤️</figcaption>
+        </figure>
+      </div>
+
+      <button class="primary" data-next="screen4">Continuer</button>
+    </section>
+
+    <section class="screen" id="screen4">
+      <div class="section-heading">
+        <p class="eyebrow">Parce que les petits moments deviennent les plus beaux souvenirs</p>
+        <h2>Notre mini film</h2>
+      </div>
+
+      <div class="video-grid">
+        <video controls playsinline preload="metadata" poster="assets/photo_1.jpg">
+          <source src="assets/video_1.mp4" type="video/mp4">
+        </video>
+        <video controls playsinline preload="metadata" poster="assets/photo_2.jpg">
+          <source src="assets/video_2.mp4" type="video/mp4">
+        </video>
+        <video controls playsinline preload="metadata" poster="assets/photo_1.jpg">
+          <source src="assets/video_3.mp4" type="video/mp4">
+        </video>
+        <video controls playsinline preload="metadata" poster="assets/photo_2.jpg">
+          <source src="assets/video_4.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <button class="primary" data-next="screen5">Un dernier message</button>
+    </section>
+
+    <section class="screen" id="screen5">
+      <div class="card final-card">
+        <div class="big-heart">❤</div>
+        <h2>Pour cette nouvelle année de ta vie…</h2>
+        <p>
+          Je te souhaite de toujours garder ton beau sourire, de croire en toi
+          et de recevoir tout le bonheur que tu mérites.
+        </p>
+        <p>
+          Merci pour chaque souvenir, chaque rire et chaque moment partagé.
+          J’espère être présent dans encore beaucoup de tes anniversaires.
+        </p>
+        <h3>Happy Birthday, Oumaima ❤️</h3>
+        <button class="primary" id="celebrate">Faire un vœu ✨</button>
+        <button class="ghost" id="restart">Revoir depuis le début</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast">Ferme les yeux, fais un vœu… ✨</div>
+  <script src="script.js"></script>
+</body>
+</html>

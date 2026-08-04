@@ -1,0 +1,184 @@
+*{box-sizing:border-box}
+:root{
+  --wine:#5a1237;
+  --rose:#d95f8d;
+  --soft:#fff2f7;
+  --gold:#f4c97b;
+  --ink:#40122c;
+}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  color:white;
+  font-family:"Poppins",sans-serif;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255,170,199,.25), transparent 35%),
+    radial-gradient(circle at 85% 85%, rgba(244,201,123,.18), transparent 35%),
+    linear-gradient(145deg,#3b0c27,#771a49 55%,#4c102f);
+}
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.28) 1px,transparent 1px);
+  background-size:28px 28px;
+  opacity:.22;
+}
+#hearts{position:fixed;inset:0;z-index:0;pointer-events:none}
+main{position:relative;z-index:1}
+.screen{
+  min-height:100svh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  padding:36px 18px;
+  text-align:center;
+  animation:fade .7s ease;
+}
+.screen.active{display:flex}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.hero h1{
+  font-family:"Great Vibes",cursive;
+  font-size:clamp(5rem,20vw,9rem);
+  line-height:.9;
+  margin:8px 0 14px;
+  color:#ffe7f0;
+  text-shadow:0 8px 35px rgba(255,165,199,.38);
+}
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.72rem;
+  font-weight:600;
+  opacity:.78;
+}
+.subtitle{max-width:620px;line-height:1.8;font-weight:300}
+.hint{font-size:.78rem;opacity:.65;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.28}}
+.envelope{
+  position:relative;
+  width:230px;height:150px;
+  border:0;
+  background:linear-gradient(145deg,#fff1f6,#edb6ca);
+  border-radius:10px;
+  margin:38px 0 10px;
+  cursor:pointer;
+  box-shadow:0 24px 60px rgba(20,0,12,.45);
+  transition:.35s ease;
+}
+.envelope:hover{transform:translateY(-7px) rotate(-1deg)}
+.envelope::before,.envelope::after{
+  content:"";position:absolute;bottom:0;width:0;height:0;z-index:2
+}
+.envelope::before{left:0;border-left:115px solid #f7c9d9;border-top:75px solid transparent}
+.envelope::after{right:0;border-right:115px solid #eeb8cb;border-top:75px solid transparent}
+.flap{
+  position:absolute;left:0;top:0;width:0;height:0;z-index:3;
+  border-left:115px solid transparent;
+  border-right:115px solid transparent;
+  border-top:85px solid #ffe6ef;
+  transform-origin:top;
+  transition:.7s ease;
+}
+.envelope.open .flap{transform:rotateX(180deg);z-index:0}
+.paper{
+  position:absolute;left:18px;right:18px;top:18px;height:110px;
+  display:grid;place-items:center;
+  background:white;color:var(--wine);
+  font-family:"Great Vibes",cursive;font-size:2rem;
+  border-radius:8px;
+  transition:.8s ease;
+}
+.envelope.open .paper{transform:translateY(-70px)}
+.seal{
+  position:absolute;z-index:5;left:50%;top:48%;
+  transform:translate(-50%,-50%);
+  width:46px;height:46px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--wine);color:#ffd5e4;
+  box-shadow:0 5px 15px rgba(60,0,30,.35);
+}
+.card{
+  width:min(680px,94vw);
+  padding:34px 25px;
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:28px;
+  background:rgba(255,255,255,.10);
+  backdrop-filter:blur(16px);
+  box-shadow:0 30px 80px rgba(20,0,12,.32);
+}
+.letter-card h2,.final-card h2,.section-heading h2{
+  font-family:"Great Vibes",cursive;
+  font-size:clamp(3rem,10vw,5.2rem);
+  line-height:1.05;margin:10px 0 24px;
+}
+.letter-card h2 span{color:#ffd6e5}
+.letter-card p,.final-card p{line-height:1.9;font-weight:300}
+.small{font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;opacity:.7}
+.signature{font-family:"Great Vibes",cursive;font-size:2.2rem!important}
+.sparkle{font-size:2rem;color:var(--gold)}
+.primary,.ghost{
+  border:0;border-radius:999px;padding:14px 24px;
+  font-family:inherit;font-weight:600;cursor:pointer;
+  margin-top:18px;transition:.25s ease;
+}
+.primary{
+  color:var(--wine);background:linear-gradient(135deg,#ffe7f0,#f5c5d7);
+  box-shadow:0 10px 28px rgba(20,0,12,.22);
+}
+.primary:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(20,0,12,.32)}
+.ghost{color:white;background:transparent;border:1px solid rgba(255,255,255,.4);margin-left:8px}
+.section-heading{max-width:760px;margin-bottom:24px}
+.gallery{
+  width:min(900px,96vw);
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:26px;margin-bottom:16px;
+}
+.polaroid{
+  margin:0;padding:12px 12px 22px;background:#fff;color:#4a1730;
+  border-radius:8px;box-shadow:0 25px 60px rgba(15,0,10,.35);
+}
+.polaroid img{width:100%;height:480px;object-fit:cover;border-radius:4px;display:block}
+.polaroid figcaption{font-family:"Great Vibes",cursive;font-size:1.65rem;margin-top:14px}
+.tilt-left{transform:rotate(-2deg)}.tilt-right{transform:rotate(2deg)}
+.video-grid{
+  width:min(980px,96vw);
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.video-grid video{
+  width:100%;aspect-ratio:9/16;max-height:550px;
+  background:#1b0712;border-radius:22px;object-fit:cover;
+  box-shadow:0 20px 50px rgba(15,0,10,.38);
+  border:1px solid rgba(255,255,255,.16);
+}
+.big-heart{font-size:4rem;animation:beat 1.3s infinite;color:#ffd2e2}
+@keyframes beat{50%{transform:scale(1.18)}}
+.final-card h3{
+  font-family:"Great Vibes",cursive;
+  font-size:clamp(2.5rem,9vw,4.5rem);
+  margin:24px 0 4px;color:#ffd6e5;
+}
+#toast{
+  position:fixed;left:50%;bottom:28px;z-index:20;
+  transform:translate(-50%,120px);
+  background:white;color:var(--wine);padding:14px 22px;border-radius:999px;
+  box-shadow:0 15px 50px rgba(0,0,0,.3);transition:.4s ease;
+  font-weight:600;text-align:center;
+}
+#toast.show{transform:translate(-50%,0)}
+.glow{
+  position:absolute;width:280px;height:280px;border-radius:50%;
+  background:rgba(255,190,215,.17);filter:blur(20px);z-index:-1;
+}
+@media (max-width:700px){
+  .gallery,.video-grid{grid-template-columns:1fr}
+  .polaroid img{height:440px}
+  .tilt-left,.tilt-right{transform:none}
+  .ghost{margin-left:0;display:block;width:100%}
+  .primary{width:100%}
+  .card{padding:30px 20px}
+}
